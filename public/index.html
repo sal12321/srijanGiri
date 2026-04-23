@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Srijan Giri — Game Developer</title>
+  <meta name="description" content="Game Developer portfolio of Srijan Giri — crafting worlds, mechanics, and interactive experiences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ░░ SCANLINE OVERLAY ░░ -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- ░░ ANIMATED BACKGROUND ░░ -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ░░ NAVIGATION ░░ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="logo" aria-label="Srijan Giri — Home">
+        <span class="logo-bracket">[</span>SG<span class="logo-bracket">]</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about"   class="nav-link" data-label="01">About</a></li>
+        <li><a href="#skills"  class="nav-link" data-label="02">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-label="03">Projects</a></li>
+        <li><a href="#contact" class="nav-link" data-label="04">Contact</a></li>
+      </ul>
+      <div class="nav-socials">
+        <a href="https://www.linkedin.com/in/srijan-giri-584688296/" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://instagram.com" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="./resume.pdf" class="social-icon" aria-label="Resume PDF" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ░░ MOBILE MENU ░░ -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#about"    class="mobile-link">About</a></li>
+      <li><a href="#skills"   class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#contact"  class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ░░ HERO ░░ -->
+  <section id="hero" class="hero">
+    <div class="hero-video-wrap">
+      <video class="hero-video" poster="./images/7xm690c415d422be.jpg" autoplay muted loop playsinline preload="metadata">
+        <source src="./videos/ShowcaseVideo.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow" aria-label="Introduction">
+        <span class="typed-prefix">// </span><span id="typed-text"></span><span class="typed-cursor">█</span>
+      </p>
+      <h1 class="hero-title">
+        <span class="hero-name-line">SRIJAN GIRI</span>
+        <!-- <span class="hero-name-line">Srijan Giri</span> -->
+        <!-- <span class="hero-name-line accent-line">@</span> -->
+      </h1>
+      <p class="hero-role">Game Developer &amp; Interactive Experience Architect</p>
+      <p class="hero-tagline">Crafting worlds. Building mechanics. Bringing stories to life.</p>
+      <div class="hero-cta-group">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact"  class="btn btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">Scroll</span>
+    </a>
+  </section>
+
+  <!-- ░░ ABOUT ░░ -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-label">01 / About</div>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm <strong>Srijan Giri</strong>, a game developer passionate about building immersive, interactive experiences. From physics-based mechanics to open-world systems, I approach every project as a craft — equal parts engineering and artistry.</p>
+          <p>My work spans the full pipeline: game design, core gameplay programming, shader development, and performance optimisation. I love the intersection of technology and storytelling.</p>
+          <p>When I'm not building games, I'm studying what makes them memorable — the feedback loops, the tension, the moments that stick with players long after they've put the controller down.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number">6+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">2</span>
+              <span class="stat-label">Engines</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-inner">
+            <div class="about-avatar" aria-hidden="true">SG</div>
+            <div class="about-info-list">
+              <div class="info-row"><span class="info-label">Specialisation</span><span class="info-value">Gameplay Programming</span></div>
+              <div class="info-row"><span class="info-label">Engines</span><span class="info-value">Unity · Unreal Engine 5</span></div>
+              <div class="info-row"><span class="info-label">Languages</span><span class="info-value">C++ · C# · HLSL</span></div>
+              <div class="info-row"><span class="info-label">Status</span><span class="info-value"><span class="status-dot"></span> Open to opportunities</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ SKILLS ░░ -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-label">02 / Skills</div>
+      <h2 class="section-title">Tech Stack</h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Game Engines</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">Unreal Engine 5</span><div class="skill-bar"><div class="skill-fill" data-level="90"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Unity</span><div class="skill-bar"><div class="skill-fill" data-level="80"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Programming</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">C++</span><div class="skill-bar"><div class="skill-fill" data-level="85"></div></div></div>
+            <div class="skill-item"><span class="skill-name">C#</span><div class="skill-bar"><div class="skill-fill" data-level="80"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Blueprints (UE5)</span><div class="skill-bar"><div class="skill-fill" data-level="88"></div></div></div>
+            <div class="skill-item"><span class="skill-name">HLSL / Shaders</span><div class="skill-bar"><div class="skill-fill" data-level="65"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Art &amp; Tools</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">Blender</span><div class="skill-bar"><div class="skill-fill" data-level="75"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Photoshop</span><div class="skill-bar"><div class="skill-fill" data-level="60"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Git / Version Control</span><div class="skill-bar"><div class="skill-fill" data-level="78"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Multiplayer &amp; Systems</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span class="skill-name">Photon Networking</span><div class="skill-bar"><div class="skill-fill" data-level="70"></div></div></div>
+            <div class="skill-item"><span class="skill-name">UE5 Replication</span><div class="skill-bar"><div class="skill-fill" data-level="65"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Procedural Generation</span><div class="skill-bar"><div class="skill-fill" data-level="72"></div></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PROJECTS ░░ -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-label">03 / Projects</div>
+      <h2 class="section-title">Game Portfolio</h2>
+
+      <div class="projects-grid">
+
+        <!-- TAMER: KING OF DINOSAURS -->
+        <article class="project-card" data-index="1">
+          <div class="project-media">
+            <video class="project-video" poster="./images/7xm690c415d422be.jpg" muted loop playsinline preload="none">
+              <source src="./videos/Block_pushes_character_backwad.mp4" type="video/mp4" />
+            </video>
+            <div class="project-media-overlay">
+              <span class="play-hint">Hover to preview</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-index">01</span>
+              <div class="project-tech">
+                <span class="tech-tag">UE5</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">GAS</span>
+              </div>
+            </div>
+            <h3 class="project-title">Tamer: King of Dinosaurs</h3>
+            <p class="project-desc">Story-driven action-adventure RPG with dating simulation elements. Built a complete modular combat framework from scratch — melee combos, creature taming AI, and companion systems.</p>
+            <ul class="project-features">
+              <li>Modular data-driven combat framework plugin</li>
+              <li>Full enemy & companion AI with Behaviour Trees</li>
+              <li>GAS-inspired action architecture</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://store.steampowered.com/app/3026730/Tamer_King_of_Dinosaurs/" class="btn btn-primary btn-sm">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                Play Demo
+              </a>
+              <a href="tamer.html" class="btn btn-ghost btn-sm">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Details
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- NEON EDGE -->
+        <article class="project-card" data-index="2">
+          <div class="project-media">
+            <video class="project-video" poster="./images/7xm690c415d422be.jpg" muted loop playsinline preload="none">
+              <source src="./videos/Block_pushes_character_backwad.mp4" type="video/mp4" />
+            </video>
+            <div class="project-media-overlay">
+              <span class="play-hint">Hover to preview</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-index">02</span>
+              <div class="project-tech">
+                <span class="tech-tag">UE5</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Blueprints</span>
+              </div>
+            </div>
+            <h3 class="project-title">Neon Edge</h3>
+            <p class="project-desc">DMC-inspired hack-and-slash prototype with aerial combos, rage mode, ranged attacks, and a modular enemy AI system built on a shared base class architecture.</p>
+            <ul class="project-features">
+              <li>Aerial combo chains & rage mode</li>
+              <li>Modular AI from shared base class</li>
+              <li>Open-source on GitHub</li>
+            </ul>
+            <div class="project-actions">
+              <a href="#" class="btn btn-primary btn-sm">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                Play Demo
+              </a>
+              <a href="#" class="btn btn-ghost btn-sm">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Details
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CYBERSTRIKE -->
+        <article class="project-card" data-index="3">
+          <div class="project-media">
+            <video class="project-video" poster="./images/7xm690c415d422be.jpg" muted loop playsinline preload="none">
+              <source src="./videos/Block_pushes_character_backwad.mp4" type="video/mp4" />
+            </video>
+            <div class="project-media-overlay">
+              <span class="play-hint">Hover to preview</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-index">03</span>
+              <div class="project-tech">
+                <span class="tech-tag">UE5</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">GAS</span>
+              </div>
+            </div>
+            <h3 class="project-title">Cyberstrike</h3>
+            <p class="project-desc">Souls-like combat prototype featuring a full Gameplay Ability System implementation, Motion Matching locomotion, and a modular parkour system with NavModifier surface detection.</p>
+            <ul class="project-features">
+              <li>GAS parry/block & enemy AI (Behaviour Trees)</li>
+              <li>Motion Matching & advanced animation</li>
+              <li>Modular parkour — 35% traversal improvement</li>
+            </ul>
+            <div class="project-actions">
+              <a href="#" class="btn btn-primary btn-sm">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                Play Demo
+              </a>
+              <a href="#" class="btn btn-ghost btn-sm">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Details
+              </a>
+            </div>
+          </div>
+        </article>
+
+      
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CONTACT ░░ -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-label">04 / Contact</div>
+      <h2 class="section-title">Let's Build Together</h2>
+      <p class="contact-intro">Have a project, opportunity, or collaboration in mind? Send me a message and I'll get back to you within 24 hours.</p>
+
+      <div class="contact-grid">
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required autocomplete="name" />
+            <span class="form-error" id="name-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" />
+            <span class="form-error" id="email-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?" required />
+            <span class="form-error" id="subject-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell me about your project..." required rows="5"></textarea>
+            <span class="form-error" id="message-error" role="alert"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loading" hidden>Sending...</span>
+          </button>
+          <div class="form-status" id="form-status" role="alert" aria-live="polite"></div>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-card">
+            <h3 class="contact-card-title">Direct Lines</h3>
+            <div class="contact-item">
+              <span class="contact-item-icon">✉</span>
+              <div>
+                <span class="contact-item-label">Email</span>
+                <a href="mailto:aaqibalam290@gmail.com" class="contact-item-value">aaqibalam290@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-icon">⬡</span>
+              <div>
+                <span class="contact-item-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/srijan-giri-584688296/" class="contact-item-value" target="_blank" rel="noopener">srijan-giri</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-icon">◈</span>
+              <div>
+                <span class="contact-item-label">Location</span>
+                <span class="contact-item-value">India</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card availability-card">
+            <div class="avail-dot"></div>
+            <p class="avail-text">Currently <strong>open to opportunities</strong> — freelance, contract, and full-time roles considered.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="#hero" class="logo footer-logo">
+          <span class="logo-bracket">[</span>SG<span class="logo-bracket">]</span>
+        </a>
+        <p class="footer-tagline">"Code. Design. Play. Repeat."</p>
+      </div>
+      <div class="footer-center">
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-right">
+        <p class="footer-copy">© 2025 Srijan Giri. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
